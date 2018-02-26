@@ -1,0 +1,10 @@
+<%= form_for @student do |f| %>
+  <%= link_to 'Student page', student_path @student %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  <%= f.label 'Date of Birth' %>
+  <%= f.date_field :dob %>
+  <%= f.submit %>
+<% end %>
