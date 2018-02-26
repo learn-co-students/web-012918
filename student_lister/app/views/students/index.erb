@@ -1,0 +1,10 @@
+<ul>
+  <% @students.each do |student| %>
+  <li>
+
+    <p><%= link_to student.name, student %></p>
+    <p><%= student.email %></p>
+    <p><%= student.dob %></p>
+  </li>
+<% end %>
+</ul>
