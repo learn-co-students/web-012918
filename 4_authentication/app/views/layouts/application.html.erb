@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Auth</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <p>
+        <% if logged_in_user %>
+        <a href="<%= edit_user_url(logged_in_user) %>">Hello, <%= @logged_in_user.friendly_name %>!</a>
+        <% end %>
+      </p>
+
+      <p>
+        <% if shopping_cart %>
+        Shopping cart contents: <%= shopping_cart %>
+        <% end %>
+      </p>
+    </header>
+    <main>
+      <%= yield %>
+    </main>
+  </body>
+</html>

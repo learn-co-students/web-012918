@@ -1,0 +1,41 @@
+# Authorization
+  - Disambiguate Auth*
+    - Author / Authentic
+  - Cookies
+    - HTTP is stateless
+    - Server & client & headers
+      - Domain-specific
+      - Expiration
+    - Don't put too much in it
+      - Stylesheets / images / etc
+    - How to set a cookie in rails
+      - Logged in user
+    - Tampering with them on the client side (using chrome extension)
+  - Sessions (demo)
+    - Crypto on it
+      - Don't trust user input
+    - Don't put too much in it
+    - Shopping cart
+    - GET users/1/edit
+      - Logged in and right user
+      - POST users/1
+    - DELETE users/1
+
+# Authentication
+  - Storing passwords in a database
+    - One-way hash
+      - What (BCrypt)
+      - Why
+    - Salts
+      - Most common passwords
+      - Rainbow tables
+  - How to do it in rails without has_secure_password (demo)
+    - sessions/new
+      - Not too much feedback on validation
+    - sessions/delete
+  - GET users/1
+      - Logged in
+  - How to do it in rails with has_secure_password (demo)
+    - sessions/new
+    - sessions/delete
+

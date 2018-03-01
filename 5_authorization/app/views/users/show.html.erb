@@ -1,0 +1,5 @@
+<h1><%= @user.friendly_name %></h1>
+
+<% if logged_in_user.id == @user.id %>
+  <%= link_to "Edit", edit_user_url(@user) %>
+<% end %>

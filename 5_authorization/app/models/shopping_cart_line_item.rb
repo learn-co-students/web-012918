@@ -1,0 +1,3 @@
+class ShoppingCartLineItem < ApplicationRecord
+
+end

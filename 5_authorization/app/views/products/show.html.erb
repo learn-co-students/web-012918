@@ -1,0 +1,9 @@
+<h1>
+	<%= @product.name %>
+</h1>
+
+<% @sli = ShoppingCartLineItem.new(product_id: @product.id) %>
+<%= form_for @sli do |form| %>
+  <%= form.hidden_field :product_id, :value => @product.id %>
+  <%= submit_tag "Add to cart!" %>
+<% end %>

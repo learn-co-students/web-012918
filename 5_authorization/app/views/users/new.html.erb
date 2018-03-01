@@ -1,0 +1,13 @@
+
+<h1>Register</h1>
+
+<%= @user.errors.full_messages %>
+
+
+
+<%= form_for @user do |form| %>
+  <%= form.text_field :name %>
+  <%= form.password_field :password, value: "" %>
+  <%= submit_tag %>
+<% end %>
+

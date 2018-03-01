@@ -1,0 +1,13 @@
+
+
+<%= form_tag '/sessions' do %>
+
+  <label for="user_name">Name</label>
+  <%= text_field_tag :'user[name]' %>
+
+  <label for="user_password">Password</label>
+  <%= password_field_tag :'user[password]' %>
+
+  <%= submit_tag %>
+
+<% end %>
