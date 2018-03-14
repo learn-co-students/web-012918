@@ -1,0 +1,27 @@
+# Object-Oriented Programming
+- Objects
+  - Keys and Values
+    - Keys must be strings
+    - Values can be any data type
+  - Object Creation
+    - Object literals
+    - Object literals with Methods
+    - Shared methods
+    - Object Factories
+    - Constructors
+    - `Class` syntax
+    - Private members with closures
+
+- Constructor Functions
+  - `function className(...) { ... }`
+  - Parameters into the method can be assigned to our object
+  - Creating new objects with `new`
+  - Adding methods onto our objects
+    - While we could apply them to the constructor, this will create a new method each time.
+- Prototypes
+  - Attaches methods for every instance
+  - `className.prototype.func`
+- ES6 `Class` Syntax
+  - `constructor()` function
+  - Instance methods
+  - Class Methods and `static`
