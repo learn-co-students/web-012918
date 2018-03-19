@@ -1,60 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title></title>
-    <style>
-      html, body {
-        padding: 0;
-        margin: 0;
-      }
-      main {
-        display: grid;
-        grid-template-columns: 20% 80%;
-        grid-template-rows: 770px;
-      }
-
-      #pokemon-nav {
-        overflow: auto;
-        grid-column-start: 1;
-        border-right: 1px solid black;
-        background-color: darkblue;
-      }
-
-      #pokemon-detail {
-        overflow: auto;
-        margin-left: 20px;
-        grid-column: span 1;
-      }
-
-      .poke-item {
-        color: black;
-        padding: 10px;
-        background-color: lightblue;
-        border: 1px solid black;
-        margin-bottom: 10px;
-      }
-
-      .poke-item:hover {
-        background-color: tan;
-      }
-
-      .poke-item.selected {
-        background-color: tan;
-      }
-    </style>
   </head>
   <body>
-    <main>
-      <div id="pokemon-nav">
-        <div>
-          <input type="text">
-          <input type="submit">
-        </div>
+    <h1>GitHub Profile Editor</h1>
+      <div>
+        <input id="username" placeholder="Enter your GitHub handle" type="text">
+        <button>Display Info</button>
       </div>
-      <div id="pokemon-detail">
-      </div>
-    </main>
+      <hr/>
+    <form id="github">
+      <label>Name: </label><input id="name" placeholder="your name" type="text"> <br/>
+      <label>Bio: </label><input id="bio" placeholder="your bio" type="text"> <br/>
+      <input type="submit">
+    </form>
+
     <script src="./index.js"></script>
   </body>
 </html>

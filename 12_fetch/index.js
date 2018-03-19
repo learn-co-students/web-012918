@@ -1,61 +1,72 @@
 document.addEventListener('DOMContentLoaded', function(){
-  const POKEAPI_URL = "https://prince-pokedex.herokuapp.com/"
+  console.log("THE DOM CONTENT HAS LOADED")
+
+  const BASE_URL = "https://api.github.com"
+  const API_TOKEN = "YOUR API TOKEN HERE"
+  /***** DIFFERENT FROM LECTURE
+  - Let's grab a user name's profile first
+  - We are just going to use an input and button for this
+
+  - To update our profile, we will separate it into a *form*
+  ****/
+  let button = document.querySelector('button')
+  let name = document.getElementById('name')
+  let bio = document.getElementById('bio')
 
 
-  const getAllPokemon = () => {
-    return fetch(`${POKEAPI_URL}/pokemons`)
-            .then( res => { return res.json() })
-  }
+  // Adding an Event Listener for our button being clicked
+  // - We will grab the username from the input field and then
+  // call our getProfile method which just takes it as a parameter
+  // for our fetch
+  button.addEventListener('click', function(event){
+    let username = document.getElementById('username').value
+    getProfile(username)
+  })
 
-  const getPokemon = (id) => {
-    return fetch(`${POKEAPI_URL}/pokemons/${id}`)
-            .then( res => { return res.json() })
-  }
+  // Adding an Event Listener for our form being submitted
+  // - We already have the information, but we need to
+  // submit information about ourselves to be updated
+  // Notice in patchProfile, we give the optional parameter
+  // Headers, Body, and Method
+  let form = document.getElementById('github')
+  form.addEventListener('submit', (event) => {
+    event.preventDefault()
+    patchProfile()
+  })
 
-  const renderPokemon = () => {
-    const pokeNav = document.getElementById("pokemon-nav")
-    getAllPokemon()
-    .then(json => {
-      console.log(json)
-      json.map(pokemon => {
-        const pokeItem = document.createElement('div')
-        pokeItem.setAttribute('class', 'poke-item')
-        pokeItem.innerText = `${pokemon.name} (#${pokemon.pokemon_id})`
+  // Fetches are "then-able". You cannot access the data right after
+  // you call it, this is due to the fact it is a Promise
+  // you can only access it after a then. From there, we need to convert
+  // our response Promise to a JSON promise (res.json() does this for us)
+  // Finally can access it after the last then
+  function getProfile(username) {
+    fetch(BASE_URL + '/users/' + username)
+    .then(res => res.json())
+    .then((json) => {
 
-        pokeItem.addEventListener('click', function(event){
-          let prev = document.querySelector(".selected")
-          if(prev) {
-              prev.classList.remove('selected');
-          }
-          pokeItem.classList += " selected"
-          getPokemon(pokemon.pokemon_id)
-            .then(json => {
-              detailPokemon(json)
-            })
-        })
-        pokeNav.append(pokeItem)
-      })
+      // ANY OPERATIONS SHOULD HAPPEN IN HERE IF IT IS DEPENDENT
+      // ON THE RESULT OF OUR JSON
+      name.value = json.name
+      bio.value = json.bio
     })
   }
 
-  const detailPokemon = (pokemon) => {
-    const pokeDetail = document.getElementById('pokemon-detail')
-    pokeDetail.innerHTML = ""
-
-    pokeDetail.innerHTML = `<h2>${pokemon.name} (#${pokemon.pokemon_id})</h2>
-    <p>Type 1: ${pokemon.type1}</p>`
-    if(pokemon.type2){
-      pokeDetail.innerHTML += `Type 2: ${pokemon.type2}`
-    }
-
-    pokeDetail.innerHTML += `<ul>
-    <li>HP: ${pokemon.hp}</li>
-    <li>Attack: ${pokemon.attack}</li>
-    <li>Defense: ${pokemon.defense}</li>
-    </ul>`
+  // Whenever a request requires more information than simply a GET request
+  // You will need to give the optional parameter object.
+  // In it, you can set headers, methods, and body. If you are passing in a
+  // body you need to be sure to JSON.stringify it.
+  function patchProfile() {
+    fetch(BASE_URL + '/user', {
+      method: 'PATCH',
+      headers: {
+        Authorization: `token ${API_TOKEN}`
+      },
+      body: JSON.stringify({
+        name: name.value,
+        bio: bio.value
+      })
+    })
+    .then((res) => { return res.json() })
+    .then(json => { console.log('Updated JSON:' + JSON.stringify(json))})
   }
-
-  // getAllPokemon()
-  // .then(console.log)
-  renderPokemon()
 })
