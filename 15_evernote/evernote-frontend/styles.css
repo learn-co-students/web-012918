@@ -1,0 +1,25 @@
+main {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  grid-template-rows: 770px;
+}
+
+#notes-container {
+  overflow: auto;
+  grid-column: span 1;
+  margin-right: 20px;
+  border-right: 3px black solid;
+}
+
+.note {
+  padding: 10px;
+}
+
+#note-detail {
+  grid-column-start: 2;
+}
+
+textarea {
+  width: 500px;
+  height: 500px;
+}
