@@ -25,5 +25,5 @@ document.addEventListener('DOMContentLoaded', function(event){
 ****/
 
 // We just extrapolate our application logic somewhere else
-// _Hint_ we should look at our app.js. Remember also the eventListener takes an event listener
+// _Hint_ we should look at our app.js. Remember also the eventListener takes a callback
 document.addEventListener('DOMContentLoaded', App.init)
