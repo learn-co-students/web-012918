@@ -1,2 +1,0 @@
-module.exports.coinAPI = 'B61E0077-B051-4004-BBA8-9F0764DD2FA1'
-module.exports.slack = 'xoxp-2727337933-282322886678-312932521442-4586afc24f4b9cea6f1c1bbbc8c48823'
