@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 50px;
+  margin: 0;
+}
+.switch {
+  min-width: 150px;
+  min-height: 100px;
+  background: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 30px;
+  flex-grow: 1;
+  transition: 1s color, 1s background-color;
+}
+.switch.on {
+  background: white;
+  color: black;
+}
+button {
+  font-size: 18px;
+  background: pink;
+  border: 4px outset;
+  margin-bottom: 5px;
+  border-radius: 100px;
+  outline: none;
+}
+.all-on {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.all-off {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
