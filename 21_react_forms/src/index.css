@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  text-align: left;
+}
+
+ul {
+  list-style-type: none;
+}
+form, ul {
+  max-width: 300px;
+  margin: auto;
+  padding: 20px;
+}
+input, select {
+  font-size: 18px;
+  display: block;
+  margin-bottom: 20px;
+  padding: 5px;
+}
+input[type=checkbox] {
+  display: inline;
+}
