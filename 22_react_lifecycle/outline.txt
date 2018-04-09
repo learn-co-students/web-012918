@@ -1,0 +1,23 @@
+- WTH is a lifecycle / lifecycle method (McAlister)
+	- And why — relate to what react is / is good at
+	- Here are a few important ones
+
+- Example: app, container, three items in container (Graham)
+	Constructor / will / did / render
+
+- Example: WillRecieveProps (Graham)
+
+- Which lifecycle methods exist (Matt McAlister)
+	Constructor (not rily a lifecycle method)
+	WillMount - XXXXX
+	DidMount
+	WillRecieveProps ———
+	ShouldComponentUpdate (bool)
+	ComponentWillUpdate ———
+	render
+	ComponentDidUpdate
+	ComponentWillUnmount
+
+Example: (Graham)
+	- Fetch
+	- setState

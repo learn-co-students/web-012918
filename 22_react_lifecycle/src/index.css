@@ -1,0 +1,11 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+.App div {
+  border: 5px solid pink;
+  padding: 50px;
+  margin: 30px;
+  background: rgba(255, 200, 250, .25);
+}
