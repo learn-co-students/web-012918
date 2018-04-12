@@ -1,0 +1,10 @@
+
+SnacksController
+UsersController
+SessionsController
+
+
+Why we need JWT
+How to use JWT
+.env and dotenv and .gitignore
+
